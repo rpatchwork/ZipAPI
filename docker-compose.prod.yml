@@ -3,7 +3,7 @@ version: '3.8'
 # Production docker-compose for Azure Windows VM deployment
 services:
   zipcode-api:
-    image: ghcr.io/rypatch/zipcode-api:latest  # Replace with your GitHub username
+    image: ghcr.io/rpatchwork/zipcode-api:latest  # Replace with your GitHub username
     ports:
       - "80:8000"    # Map to standard HTTP port
       - "8000:8000"  # Also expose on 8000 for direct access

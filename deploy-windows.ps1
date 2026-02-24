@@ -2,7 +2,7 @@
 # This script sets up the container to run at Windows startup
 
 param(
-    [string]$ImageName = "ghcr.io/rypatch/zipcode-api:latest",
+    [string]$ImageName = "ghcr.io/rpatchwork/zipcode-api:latest",
     [string]$ContainerName = "zipcode-api-prod",
     [int]$HttpPort = 80,
     [int]$ApiPort = 8000

@@ -15,7 +15,7 @@ if errorlevel 1 (
 )
 
 echo Pulling latest ZipCode API container...
-docker pull ghcr.io/rypatch/zipcode-api:latest
+docker pull ghcr.io/rpatchwork/zipcode-api:latest
 
 if errorlevel 1 (
     echo Warning: Could not pull latest image. Using local image if available.
@@ -38,7 +38,7 @@ docker run -d ^
     --health-timeout=10s ^
     --health-retries=3 ^
     --health-start-period=60s ^
-    ghcr.io/rypatch/zipcode-api:latest
+    ghcr.io/rpatchwork/zipcode-api:latest
 
 if errorlevel 1 (
     echo Error: Failed to start container

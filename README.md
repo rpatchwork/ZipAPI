@@ -1,7 +1,7 @@
 # ZipCode Population Density Assessment API
 
-[![Build and Deploy](https://github.com/rypatch/ZipAPI/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/rypatch/ZipAPI/actions/workflows/build-deploy.yml)
-[![Docker Image](https://img.shields.io/badge/docker-ghcr.io%2Frypatch%2Fzipcode--api-blue)](https://github.com/rypatch/ZipAPI/pkgs/container/zipcode-api)
+[![Build and Deploy](https://github.com/rpatchwork/ZipAPI/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/rpatchwork/ZipAPI/actions/workflows/build-deploy.yml)
+[![Docker Image](https://img.shields.io/badge/docker-ghcr.io%2Frpatchwork%2Fzipcode--api-blue)](https://github.com/rpatchwork/ZipAPI/pkgs/container/zipcode-api)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-green)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -91,7 +91,7 @@ docker run -d -p 80:8000 --name zipcode-api --restart unless-stopped ghcr.io/YOU
 **Quick Deployment**:
 1. **Download and run the deployment script**:
    ```powershell
-   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/rypatch/ZipAPI/main/deploy-windows.ps1" -OutFile "deploy.ps1"
+   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/rpatchwork/ZipAPI/main/deploy-windows.ps1" -OutFile "deploy.ps1"
    PowerShell -ExecutionPolicy Bypass -File "deploy.ps1"
    ```
 
@@ -117,13 +117,13 @@ Pull the latest production-ready container:
 
 ```powershell
 # Latest stable release
-docker pull ghcr.io/rypatch/zipcode-api:latest
+docker pull ghcr.io/rpatchwork/zipcode-api:latest
 
 # Specific version
-docker pull ghcr.io/rypatch/zipcode-api:v1.0.0
+docker pull ghcr.io/rpatchwork/zipcode-api:v1.0.0
 
 # Run directly
-docker run -d --name zipcode-api -p 8000:8000 --restart unless-stopped ghcr.io/rypatch/zipcode-api:latest
+docker run -d --name zipcode-api -p 8000:8000 --restart unless-stopped ghcr.io/rpatchwork/zipcode-api:latest
 ```
 
 ### Development Setup
