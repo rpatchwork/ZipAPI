@@ -1,0 +1,38 @@
+version: '3.8'
+
+# Production docker-compose for Azure Windows VM deployment
+services:
+  zipcode-api:
+    image: ghcr.io/rypatch/zipcode-api:latest  # Replace with your GitHub username
+    ports:
+      - "80:8000"    # Map to standard HTTP port
+      - "8000:8000"  # Also expose on 8000 for direct access
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+      - PORT=8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - zipcode-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+networks:
+  zipcode-network:
+    driver: bridge
