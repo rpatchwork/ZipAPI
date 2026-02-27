@@ -36,7 +36,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        images: ${{ env.REGISTRY }}/rpatchwork/zipapi
         tags: |
           type=ref,event=branch
           type=ref,event=pr
@@ -57,7 +57,7 @@ jobs:
 
     - name: Test container
       run: |
-        docker run --rm -d --name test-api -p 8000:8000 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+        docker run --rm -d --name test-api -p 8000:8000 ${{ env.REGISTRY }}/zipapi:latest
         sleep 30
         curl -f http://localhost:8000/health || exit 1
         docker stop test-api
