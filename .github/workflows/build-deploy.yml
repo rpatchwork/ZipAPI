@@ -57,7 +57,7 @@ jobs:
 
     - name: Test container
       run: |
-        docker run --rm -d --name test-api -p 8000:8000 ${{ env.REGISTRY }}/zipapi:latest
+        docker run --rm -d --name test-api -p 8000:8000 ${{ env.REGISTRY }}/rpatchwork/zipapi:latest
         sleep 30
         curl -f http://localhost:8000/health || exit 1
         docker stop test-api
